@@ -153,7 +153,7 @@ class Chunker
                 if ($done) {
 
                     // chunk done callback
-                    $this->triggerCallback($this->done_callback, [$this->meta]);
+                    $this->triggerCallback($this->done_callback, [$slice, $this->meta]);
 
                     $this->chunk_position++;
                     $this->writeMeta('chunk_position', $this->chunk_position);

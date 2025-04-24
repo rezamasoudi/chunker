@@ -23,7 +23,8 @@ Chunker::init('test_01')
     ->chunkSize(200)                        // Number of items per chunk
     ->delay(2)                              // Delay (in seconds) between chunks
     ->maxRetries(1)                         // Retry once on failure
-    ->done(function (array $meta) {
+    ->done(function (array $chunk, array $meta) {
+        print("chunk count: ". count($chunk). PHP_EOL);
         print ('Chunk #' . $meta['chunk_position'] . ' done successfully.' . PHP_EOL);
     })
     ->fail(function (array $meta) {
